@@ -14,18 +14,20 @@ if [ ${TERM} == "linux" ]; then
 #		startx
 #	fi
 
+# Export Environments
+	export PATH=$PATH:$HOME/.local/bin
+	export EDITOR="vim"
+	#export VDPAU_DRIVER="va_gl"
+	export HISTSIZE=2000
+	export QT_SELECT=4
+	export GUILE_AUTO_COMPILE=0
+
 # Android SDK env
 	export ANDROID_HOME=$HOME/.local/opt/android-sdk
 	export ANDROID_SDK_ROOT=$HOME/.local/opt/android-sdk
 	export ANDROID_SWT=$HOME/.local/opt/android-sdk/tools/lib/x86_64/
 	export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/build-tools/android-M/:$ANDROID_HOME/platform-tools/
 fi
-
-export EDITOR="vim"
-#export VDPAU_DRIVER="va_gl"
-export HISTSIZE=2000
-export PATH=$PATH:$HOME/.local/bin
-export QT_SELECT=4
 
 PS1='[\u@\h \A \W]\$ '
 alias ls='ls --color=auto'
@@ -43,4 +45,3 @@ alias mburn16='avrdude -p m16 -c usbasp -e -U'
 alias acm='gcc -static -w -O2 -DONLINE_JUDGE'
 alias google-earth='env LANG=en_US.UTF-8 google-earth'
 #alias wine='env LANG=zh_CN.utf8 wine'
-
